@@ -1,0 +1,16 @@
+cohort_split: /path/to/existing/T001/cohort_split_smoke.csv
+feature_root: /path/to/existing/UNI2/h5_features
+seed: 20260831
+clinical:
+  table: /path/to/BRCA/clinical.tsv
+  sep: "\t"
+  patient_id_col: case_submitter_id
+  # Keep this list small for a smoke test and inspect the actual local columns first.
+  covariates:
+    - age_at_diagnosis
+    - ajcc_pathologic_stage
+    - ajcc_pathologic_t
+    - ajcc_pathologic_n
+  target_columns:
+    - primary_diagnosis
+  max_missing_fraction: 0.8

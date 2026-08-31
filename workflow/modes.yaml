@@ -1,0 +1,21 @@
+modes:
+  DISCOVERY:
+    trigger: no_explicit_clinical_task
+    default_execution_intent: ASSESS_ONLY
+    output: clinical_task_portfolio
+  TASK_SPECIFIED:
+    trigger: one_explicit_clinical_task
+    output: task_specific_pipeline
+  MULTI_TASK_SPECIFIED:
+    trigger: multiple_explicit_clinical_tasks
+    output: shared_asset_dag_and_task_pipelines
+cohort_modes:
+  SINGLE_COHORT:
+    output: single_cohort_contract
+  MULTI_COHORT:
+    output: cohort_registry_and_study_role_plans
+execution_intents:
+  - ASSESS_ONLY
+  - PLAN
+  - EXECUTE
+  - EXECUTE_SELECTED

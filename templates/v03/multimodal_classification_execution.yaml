@@ -1,0 +1,16 @@
+version: v0.3
+execution_slice: STRUCTURED_MULTIMODAL_CLASSIFICATION
+reuse:
+  clinical_task: true
+  frozen_split: true
+  pathology_feature_store: true
+clinical_covariates:
+  fit_scope: TRAIN_ONLY
+  reject_target_derived_fields: true
+baselines:
+  - pathology_only
+  - clinical_only
+  - concat_fusion
+  - late_fusion
+scientific_role: baseline_incremental_value_check
+algorithmic_novelty: false

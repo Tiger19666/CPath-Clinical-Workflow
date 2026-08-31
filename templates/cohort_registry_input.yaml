@@ -1,0 +1,15 @@
+cohorts:
+  - cohort_id: C001
+    name: <cohort-name>
+    root: <local-path>
+    disease_context: <disease>
+    patient_identity_key: <patient-id-field-or-parser>
+    modalities: [WSI]
+    labels:
+      - target: <clinical-endpoint>
+        semantic_role: <role>
+        level: patient
+        definition: <label-definition>
+    declared_role: UNASSIGNED
+    independence_from_development: UNKNOWN
+    pooling_permission: false

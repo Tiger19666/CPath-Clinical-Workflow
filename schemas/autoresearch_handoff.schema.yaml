@@ -1,0 +1,18 @@
+type: object
+required: [version, task_id, status, readiness_reasons, immutable, controlled, free, baselines, evidence, handoff_policy]
+properties:
+  version: {const: AutoResearchHandoff-v1}
+  task_id: {type: [string, 'null']}
+  status: {enum: [NOT_READY, READY_FOR_AUTORESEARCH]}
+  readiness_reasons:
+    type: array
+    items: {type: string}
+  immutable:
+    type: object
+    required: [clinical_endpoint, frozen_test_split, clinical_claim_scope, evaluation_contract]
+  controlled: {type: object}
+  free: {type: object}
+  baselines: {type: object}
+  evidence: {type: object}
+  known_failure_modes: {type: array}
+  handoff_policy: {type: object}

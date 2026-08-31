@@ -1,0 +1,17 @@
+task_id: T001
+references:
+  - reference_id: L001
+    claimed:
+      title: <title discovered by agent>
+      year: <year>
+      doi: <doi if known>
+    resolved:
+      resolver: <pubmed/crossref/doi/publisher/guideline/official_dataset_site>
+      title: <metadata returned by external source>
+      year: <resolved year>
+      doi: <resolved doi>
+      source_url: <resolved source>
+      resolver_record_id: <PMID/DOI/guideline record id>
+    evidence_roles:
+      - pathology_ai
+    key_takeaway: <task-specific clinical takeaway>

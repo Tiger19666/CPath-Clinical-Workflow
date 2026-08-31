@@ -1,0 +1,8 @@
+type: object
+required: [version, artifacts]
+properties:
+  artifacts:
+    type: object
+    additionalProperties:
+      type: object
+      required: [artifact_id, output_path, output_hash, inputs, state]

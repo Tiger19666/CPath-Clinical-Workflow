@@ -1,0 +1,8 @@
+type: object
+required: [task_id, required_query_families, queries, completion_rule]
+properties:
+  task_id: {type: string}
+  clinical_question: {type: string}
+  required_query_families: {type: array, minItems: 4}
+  queries: {type: array, minItems: 4}
+  completion_rule: {type: object}

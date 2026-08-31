@@ -1,0 +1,16 @@
+type: object
+required: [store_id, source_type, source_cohort, preprocessing_contract, status]
+properties:
+  version: {type: string}
+  store_id: {type: string}
+  source_type: {enum: [foundation_model, non_fm, unknown]}
+  encoder: {type: [string, 'null']}
+  encoder_version: {type: [string, 'null']}
+  weights_id: {type: [string, 'null']}
+  weights_checksum: {type: [string, 'null']}
+  provenance_status: {enum: [COMPLETE, INCOMPLETE, UNKNOWN]}
+  source_cohort: {type: string}
+  preprocessing_contract: {type: object}
+  feature_dimension: {type: [integer, 'null']}
+  coverage: {type: [number, 'null']}
+  status: {enum: [PLANNED, READY, PARTIAL, INVALID]}

@@ -1,0 +1,26 @@
+task_id: T001
+searches:
+  - family: clinical_endpoint
+    query: <actual query used>
+    source: <PubMed/guideline/official source>
+    executed: false
+    results_screened: 0
+    selected_reference_ids: []
+  - family: pathology_ai_landscape
+    query: <actual query used>
+    source: PubMed
+    executed: false
+    results_screened: 0
+    selected_reference_ids: []
+  - family: validation_landscape
+    query: <actual query used>
+    source: PubMed
+    executed: false
+    results_screened: 0
+    selected_reference_ids: []
+  - family: dataset_benchmark
+    query: <actual query used>
+    source: <dataset site/PubMed>
+    executed: false
+    results_screened: 0
+    selected_reference_ids: []

@@ -1,0 +1,8 @@
+version: MultiCohortStudyPlan-v1
+target: <clinical-endpoint>
+development_cohort_id: <cohort-id>
+assignments: []
+compatibility_to_development: []
+pooling_policy: NO_AUTOMATIC_POOLING
+external_claim_rule: EXTERNAL_VALIDATION requires explicit independence evidence
+status: NOT_READY

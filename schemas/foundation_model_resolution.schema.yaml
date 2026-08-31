@@ -1,0 +1,6 @@
+type: object
+required: [version, status, candidates]
+properties:
+  status: {enum: [READY, NOT_READY]}
+  selected: {type: [object, 'null']}
+  candidates: {type: array}

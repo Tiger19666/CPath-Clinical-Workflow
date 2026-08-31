@@ -1,0 +1,5 @@
+type: object
+required: [version, root, expected_slides, matched_slides, status]
+properties:
+  status: {enum: [PASS, CONDITIONAL, FAIL]}
+  coverage: {type: [number, 'null']}

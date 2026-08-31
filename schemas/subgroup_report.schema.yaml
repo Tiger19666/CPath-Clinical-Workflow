@@ -1,0 +1,10 @@
+type: object
+required: [status, split, model, n_patients, min_group_n, subgroups, interpretation_guard]
+properties:
+  status: {enum: [PASS]}
+  split: {type: string}
+  model: {type: string}
+  n_patients: {type: integer}
+  min_group_n: {type: integer}
+  subgroups: {type: object}
+  interpretation_guard: {type: string}

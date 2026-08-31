@@ -1,0 +1,16 @@
+type: object
+required: [version, target, assignments, compatibility_to_development, pooling_policy, status]
+properties:
+  version: {const: MultiCohortStudyPlan-v1}
+  target: {type: string}
+  development_cohort_id: {type: [string, 'null']}
+  assignments:
+    type: array
+    items:
+      type: object
+      required: [cohort_id, role, reason]
+      properties:
+        role: {enum: [DEVELOPMENT, INTERNAL_VALIDATION, EXTERNAL_VALIDATION, VALIDATION_CANDIDATE, TRANSFER_ONLY, UNSUPPORTED]}
+  compatibility_to_development: {type: array}
+  pooling_policy: {const: NO_AUTOMATIC_POOLING}
+  status: {enum: [READY, NOT_READY]}

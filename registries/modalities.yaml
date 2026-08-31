@@ -1,0 +1,37 @@
+version: 1
+modalities:
+  wsi:
+    indicators: [.svs, .ndpi, .mrxs, .scn, .bif, pyramidal_tiff]
+    required_qc: [readability, dimensions, pyramid_levels, mpp_or_objective_if_available, tissue_qc]
+    default_pipeline: wsi
+    trident_default: conditional
+  roi:
+    indicators: [roi_directory, crop_images, region_images]
+    required_qc: [image_dimensions, physical_scale_if_available, roi_provenance, source_wsi_linkage]
+    default_pipeline: roi
+    trident_default: false
+  patch:
+    indicators: [patch_directory, tile_images]
+    required_qc: [image_dimensions, physical_scale_if_available, source_slide_patient_linkage]
+    default_pipeline: patch
+    trident_default: false
+  cell:
+    indicators: [cell_crops, nucleus_masks, cell_coordinates, cell_labels]
+    required_qc: [cell_provenance, scale, annotation_quality]
+    default_pipeline: cell_spatial
+    trident_default: false
+  existing_features:
+    indicators: [.h5, .pt, .pth, .npy, .npz]
+    required_qc: [encoder_provenance, shape, coverage, slide_mapping]
+    default_pipeline: feature_reuse
+    trident_default: false
+  text:
+    indicators: [reports, captions, diagnosis_text, qa]
+    required_qc: [privacy, target_leakage, provenance]
+    default_pipeline: text_or_multimodal
+    trident_default: false
+  omics:
+    indicators: [expression_matrix, mutation_table, proteomics, spatial_omics]
+    required_qc: [sample_linkage, normalization_provenance, missingness]
+    default_pipeline: multimodal
+    trident_default: false

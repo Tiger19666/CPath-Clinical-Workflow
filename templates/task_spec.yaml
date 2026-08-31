@@ -1,0 +1,13 @@
+task_id: T001
+name: <single clinical task>
+clinical_question: <one clinically meaningful question>
+task_family: classification
+prediction_level: patient
+target: <one atomic endpoint>
+label_id: <label id>
+label_source: <table/field/annotation source>
+required_modalities: [WSI]
+optional_modalities: []
+status: CONDITIONAL_GO
+dependencies: []
+support_tier: SUPPORTED_TASK

@@ -1,0 +1,20 @@
+type: object
+required: [mode, execution_intent, requested_tasks]
+properties:
+  mode: {enum: [DISCOVERY, TASK_SPECIFIED, MULTI_TASK_SPECIFIED]}
+  execution_intent: {enum: [ASSESS_ONLY, PLAN, EXECUTE, EXECUTE_SELECTED]}
+  dataset_root: {type: [string, 'null']}
+  cohorts:
+    type: array
+    items:
+      type: object
+      properties:
+        cohort_id: {type: string}
+        name: {type: string}
+        root: {type: string}
+        declared_role: {type: string}
+        disease_context: {type: string}
+  requested_tasks: {type: array}
+  privacy: {type: object}
+  constraints: {type: object}
+  cohort_mode: {enum: [SINGLE_COHORT, MULTI_COHORT, UNRESOLVED]}

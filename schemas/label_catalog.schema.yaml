@@ -1,0 +1,16 @@
+type: object
+required: [labels]
+properties:
+  labels:
+    type: array
+    items:
+      type: object
+      required: [label_id, name, semantic_role, level]
+      properties:
+        label_id: {type: string}
+        name: {type: string}
+        semantic_role: {type: string}
+        level: {type: string}
+        coverage: {type: [number, 'null']}
+        quality: {type: string}
+        linkage_status: {type: string}

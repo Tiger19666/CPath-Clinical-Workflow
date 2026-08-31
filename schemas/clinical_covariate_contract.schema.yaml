@@ -1,0 +1,11 @@
+type: object
+required: [status, patient_id_column, assessment_scope, accepted_covariates, rejected_covariates, preprocessing_contract, availability_contract]
+properties:
+  status:
+    enum: [READY, NO_USABLE_COVARIATES]
+  patient_id_column: {type: string}
+  assessment_scope: {enum: [TRAIN_ONLY, ALL_AVAILABLE]}
+  accepted_covariates: {type: array}
+  rejected_covariates: {type: array}
+  preprocessing_contract: {type: object}
+  availability_contract: {type: object}

@@ -1,0 +1,31 @@
+version: AutoResearchHandoff-v1
+task_id: <task-id>
+status: NOT_READY
+readiness_reasons: []
+immutable:
+  clinical_endpoint: <target>
+  clinical_question: <question>
+  label_definition: <definition>
+  prediction_level: <level>
+  task_family: <family>
+  frozen_test_split: <manifest>
+  clinical_claim_scope: {}
+  evaluation_contract: {}
+  study_plan: {}
+controlled:
+  representations: {}
+  cohort_registry: {}
+free:
+  allowed_algorithm_changes: [architecture, aggregation, loss, sampling, optimization, fusion]
+  test_set_access_rule: No algorithm selection may use frozen final-test labels/results.
+forbidden_changes: []
+baselines: {}
+evidence:
+  reproducibility_manifest: {}
+  subgroup_summary: {}
+  artifact_state: {}
+known_failure_modes: []
+handoff_policy:
+  negative_results_must_be_retained: true
+  new_algorithm_results_must_use_frozen_evaluation_contract: true
+  claim_upgrades_return_to_clinical_review: true

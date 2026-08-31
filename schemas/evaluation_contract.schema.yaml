@@ -1,0 +1,10 @@
+type: object
+required: [status, task_family, prediction_level, study_scope, diagnostic_only, metrics, rules]
+properties:
+  status: {enum: [READY, TASK_SPECIFIC_REVIEW_REQUIRED]}
+  task_family: {type: string}
+  prediction_level: {type: string}
+  study_scope: {type: string}
+  diagnostic_only: {type: boolean}
+  metrics: {type: object}
+  rules: {type: object}

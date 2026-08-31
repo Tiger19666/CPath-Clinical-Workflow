@@ -1,0 +1,50 @@
+version: ClinicalVisionExecution-v0.2
+request:
+  mode: TASK_SPECIFIED
+  execution_intent: EXECUTE
+  task_id: T001
+
+task:
+  task_family: classification
+  prediction_level: patient
+  clinical_question: null
+
+cohort:
+  slides:
+    root: null
+    extensions: [.svs]
+    recursive: false
+    patient_parser: tcga_patient
+  labels:
+    table: null
+    sep: "\t"
+    patient_col: case_submitter_id
+    label_col: primary_diagnosis
+    mapping:
+      "Infiltrating duct carcinoma, NOS": ductal
+      "Lobular carcinoma, NOS": lobular
+    exclude_unmapped: true
+
+split:
+  group_col: patient_id
+  label_col: label_id
+  seed: 42
+  train_ratio: 0.7
+  val_ratio: 0.1
+  test_ratio: 0.2
+
+foundation_model:
+  preferences: [uni_v2, uni_v1]
+  allow_remote: false
+
+trident:
+  gpus: [0]
+  output_root: null
+  feature_store_id: T001_PRIMARY_KNOWN_FM
+
+training:
+  baselines: [mean_pooling, abmil]
+  epochs: 30
+  patience: 5
+  max_patches_per_slide: 2048
+  seed: 42

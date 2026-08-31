@@ -1,0 +1,11 @@
+type: object
+required: [status, task_type, models, n_train, n_val, n_test, preprocessing_fit_scope, metrics]
+properties:
+  status: {enum: [PASS]}
+  task_type: {enum: [patient_level_multimodal_classification]}
+  models: {type: array}
+  n_train: {type: integer}
+  n_val: {type: integer}
+  n_test: {type: integer}
+  preprocessing_fit_scope: {enum: [TRAIN_ONLY]}
+  metrics: {type: object}

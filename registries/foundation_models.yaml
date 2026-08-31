@@ -1,0 +1,306 @@
+version: 1
+registry_name: computational_pathology_foundation_models
+last_verified: 2026-08-26
+verification_basis:
+  - MahmoodLab/TRIDENT public README, current main branch
+  - Official model repositories/model cards where available
+notes:
+  - This registry encodes compatibility metadata, not a performance leaderboard.
+  - Values may change with upstream releases; local repository/model-card inspection overrides stale registry metadata.
+  - Gated/access-controlled models must never be downloaded automatically without explicit user approval.
+
+patch_encoders:
+  uni_v1:
+    display_name: UNI
+    modality: visual
+    level: patch
+    family: UNI
+    embedding_dim: 1024
+    trident:
+      patch_encoder: uni_v1
+      patch_size: 256
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [visual_baseline, mil_features, retrieval, robustness]
+
+  uni_v2:
+    display_name: UNI2-h
+    modality: visual
+    level: patch
+    family: UNI
+    embedding_dim: 1536
+    trident:
+      patch_encoder: uni_v2
+      patch_size: 256
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [visual_baseline, mil_features, retrieval, robustness]
+
+  conch_v1:
+    display_name: CONCH
+    modality: vision_language
+    level: patch
+    family: CONCH
+    embedding_dim: 512
+    trident:
+      patch_encoder: conch_v1
+      patch_size: 512
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [vision_language, image_text_retrieval, multimodal_baseline, mil_features]
+
+  conch_v15:
+    display_name: CONCHv1.5
+    modality: vision_language
+    level: patch
+    family: CONCH
+    embedding_dim: 768
+    trident:
+      patch_encoder: conch_v15
+      patch_size: 512
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [vision_language, image_text_retrieval, multimodal_baseline, mil_features]
+
+  virchow:
+    display_name: Virchow
+    modality: visual
+    level: patch
+    family: Virchow
+    embedding_dim: 2560
+    trident:
+      patch_encoder: virchow
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: Apache-2.0
+    roles: [visual_baseline, mil_features, robustness]
+
+  virchow2:
+    display_name: Virchow2
+    modality: visual
+    level: patch
+    family: Virchow
+    embedding_dim: 2560
+    trident:
+      patch_encoder: virchow2
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [visual_baseline, mil_features, robustness]
+
+  virchow2_cls:
+    display_name: Virchow2-CLS
+    modality: visual
+    level: patch
+    family: Virchow
+    embedding_dim: 1280
+    trident:
+      patch_encoder: virchow2-cls
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [visual_baseline, mil_features, slide_encoder_dependency]
+
+  phikon_v2:
+    display_name: Phikon-v2
+    modality: visual
+    level: patch
+    family: Phikon
+    embedding_dim: 1024
+    trident:
+      patch_encoder: phikon_v2
+      patch_size: 224
+      magnification: 20
+    access: gated_or_restricted
+    license: Owkin-non-commercial
+    roles: [visual_baseline, mil_features, robustness]
+
+  gigapath:
+    display_name: Prov-GigaPath patch encoder
+    modality: visual
+    level: patch
+    family: GigaPath
+    embedding_dim: 1536
+    trident:
+      patch_encoder: gigapath
+      patch_size: 256
+      magnification: 20
+    access: gated
+    license: Apache-2.0
+    roles: [visual_baseline, mil_features, slide_encoder_dependency, robustness]
+
+  hoptimus0:
+    display_name: H-Optimus-0
+    modality: visual
+    level: patch
+    family: H-Optimus
+    embedding_dim: 1536
+    trident:
+      patch_encoder: hoptimus0
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: Apache-2.0
+    roles: [visual_baseline, mil_features, robustness]
+
+  hoptimus1:
+    display_name: H-Optimus-1
+    modality: visual
+    level: patch
+    family: H-Optimus
+    embedding_dim: 1536
+    trident:
+      patch_encoder: hoptimus1
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [visual_baseline, mil_features, robustness]
+
+  musk:
+    display_name: MUSK
+    modality: multimodal
+    level: patch
+    family: MUSK
+    embedding_dim: 1024
+    trident:
+      patch_encoder: musk
+      patch_size: 384
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [multimodal_baseline, mil_features, robustness]
+
+  ctranspath:
+    display_name: CTransPath-CHIEF patch encoder
+    modality: visual
+    level: patch
+    family: CTransPath
+    embedding_dim: 768
+    trident:
+      patch_encoder: ctranspath
+      patch_size: 256
+      magnification: 10
+    access: manual_or_local
+    license: GPL-3.0
+    roles: [legacy_baseline, slide_encoder_dependency, robustness]
+
+slide_encoders:
+  titan:
+    display_name: TITAN
+    modality: multimodal
+    level: slide
+    family: TITAN
+    patch_encoder_dependency: conch_v15
+    trident:
+      slide_encoder: titan
+      patch_size: 512
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [slide_foundation_model, multimodal_baseline, retrieval]
+
+  prism:
+    display_name: PRISM
+    modality: multimodal
+    level: slide
+    family: PRISM
+    patch_encoder_dependency: virchow
+    trident:
+      slide_encoder: prism
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [slide_foundation_model, multimodal_baseline]
+
+  prism2:
+    display_name: PRISM2
+    modality: multimodal
+    level: slide
+    family: PRISM
+    patch_encoder_dependency: virchow2_cls
+    trident:
+      slide_encoder: prism2
+      patch_size: 224
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [slide_foundation_model, multimodal_baseline]
+
+  gigapath_slide:
+    display_name: Prov-GigaPath slide encoder
+    modality: visual
+    level: slide
+    family: GigaPath
+    patch_encoder_dependency: gigapath
+    trident:
+      slide_encoder: gigapath
+      patch_size: 256
+      magnification: 20
+    access: gated
+    license: Apache-2.0
+    roles: [slide_foundation_model, visual_baseline]
+
+  chief:
+    display_name: CHIEF
+    modality: visual
+    level: slide
+    family: CHIEF
+    patch_encoder_dependency: ctranspath
+    trident:
+      slide_encoder: chief
+      patch_size: 256
+      magnification: 10
+    access: manual_or_local
+    license: AGPL-3.0
+    roles: [slide_foundation_model, legacy_baseline]
+
+  madeleine:
+    display_name: Madeleine
+    modality: multimodal
+    level: slide
+    family: Madeleine
+    patch_encoder_dependency: conch_v1
+    trident:
+      slide_encoder: madeleine
+      patch_size: 256
+      magnification: 10
+    access: gated
+    license: MIT
+    roles: [slide_foundation_model, multimodal_baseline]
+
+  feather:
+    display_name: Feather
+    modality: visual
+    level: slide
+    family: Feather
+    patch_encoder_dependency: conch_v15
+    trident:
+      slide_encoder: feather
+      patch_size: 512
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [slide_foundation_model, supervised_slide_baseline]
+
+  feather_uni_v2:
+    display_name: Feather-UNI2
+    modality: visual
+    level: slide
+    family: Feather
+    patch_encoder_dependency: uni_v2
+    trident:
+      slide_encoder: feather_uni_v2
+      patch_size: 256
+      magnification: 20
+    access: gated
+    license: CC-BY-NC-ND-4.0
+    roles: [slide_foundation_model, supervised_slide_baseline]

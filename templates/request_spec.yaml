@@ -1,0 +1,8 @@
+mode: DISCOVERY
+execution_intent: ASSESS_ONLY
+dataset_root: <path-or-null>
+cohorts: []
+requested_tasks: []
+privacy:
+  external_upload_allowed: false
+constraints: {}

@@ -1,0 +1,25 @@
+task_families:
+  classification:
+    common_endpoints: [diagnosis, subtype, grade, stage, biomarker, mutation, molecular_subtype, anatomic_region]
+    standard_metrics: [auroc, auprc, accuracy, balanced_accuracy, f1, sensitivity, specificity]
+  ordinal_classification:
+    common_endpoints: [grade, stage, severity]
+    standard_metrics: [macro_f1, balanced_accuracy, quadratic_weighted_kappa]
+  survival:
+    common_endpoints: [overall_survival, disease_free_survival, progression_free_survival, recurrence]
+    standard_metrics: [c_index, time_dependent_auc, calibration]
+  regression:
+    common_endpoints: [continuous_biomarker, expression_score, risk_score]
+    standard_metrics: [mae, rmse, pearson, spearman]
+  segmentation:
+    common_endpoints: [tumor_region, tissue_structure, lesion, cell_or_nucleus]
+    standard_metrics: [dice, iou]
+  vqa:
+    common_endpoints: [question_answer]
+    standard_metrics: [accuracy, clinical_correctness, grounding]
+  report_generation:
+    common_endpoints: [pathology_report]
+    standard_metrics: [clinical_correctness, factuality, grounding]
+  multimodal_prediction:
+    common_endpoints: [response, prognosis, diagnosis, biomarker]
+    standard_metrics: [task_specific]

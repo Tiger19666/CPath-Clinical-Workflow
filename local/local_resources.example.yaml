@@ -1,0 +1,20 @@
+# Copy to local/local_resources.yaml. Keep machine-specific paths out of Git.
+resources:
+  trident:
+    repo: null
+    python: null
+  foundation_models:
+    uni_v2:
+      checkpoint: null
+      access_verified: false
+    uni_v1:
+      checkpoint: null
+      access_verified: false
+    virchow2:
+      checkpoint: null
+      access_verified: false
+execution:
+  default_device: auto
+  slurm_enabled: false
+  output_root: null
+  allow_model_downloads: false

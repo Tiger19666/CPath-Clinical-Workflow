@@ -1,0 +1,40 @@
+baselines:
+  wsi_classification:
+    - mean_pooling
+    - max_pooling
+    - abmil
+    - clam_sb
+    - transmil
+  multi_slide_patient:
+    - mean_slide_pooling
+    - attention_slide_pooling
+    - hierarchical_mil_baseline
+  survival_pathology:
+    - abmil_plus_cox
+    - abmil_plus_discrete_time
+  survival_clinical:
+    - cox_clinical
+    - discrete_time_clinical
+  survival_multimodal:
+    - late_fusion_survival
+    - concat_survival
+  segmentation:
+    - unet
+    - deeplabv3
+  multimodal:
+    - pathology_only_logistic
+    - clinical_only_logistic
+    - concatenation_logistic
+    - equal_weight_late_fusion
+    - simple_gated_fusion_planning_only
+  clinical_only:
+    - linear_or_mlp_clinical
+  vlm:
+    - zero_shot
+    - few_shot
+    - lora_or_peft
+
+principles:
+  - Clinical baselines establish feasibility, reproducibility, and incremental clinical value.
+  - When structured clinical covariates are available, survival/multimodal tasks should compare clinical-only, pathology-only, and combined models.
+  - New architectures, losses, routing mechanisms, or algorithmic novelty belong to CPath-AutoResearch.

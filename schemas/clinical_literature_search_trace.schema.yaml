@@ -1,0 +1,9 @@
+type: object
+required: [task_id, searches]
+properties:
+  task_id: {type: string}
+  searches:
+    type: array
+    items:
+      type: object
+      required: [family, query, source, executed, results_screened, selected_reference_ids]

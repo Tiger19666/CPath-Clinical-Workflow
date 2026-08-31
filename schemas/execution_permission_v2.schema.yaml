@@ -1,0 +1,13 @@
+type: object
+required: [version, intent_gate, readiness_gate, final_permission]
+properties:
+  version: {type: string}
+  intent_gate:
+    type: object
+    required: [status, reason]
+  readiness_gate:
+    type: object
+    required: [status, reason]
+  final_permission:
+    type: object
+    required: [allowed, reason]

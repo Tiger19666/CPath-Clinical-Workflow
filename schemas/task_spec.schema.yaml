@@ -1,0 +1,20 @@
+type: object
+required: [task_id, name, clinical_question, task_family, prediction_level, target, status]
+properties:
+  task_id: {type: string}
+  name: {type: string}
+  clinical_question: {type: string, minLength: 1}
+  task_family:
+    enum: [classification, ordinal_classification, regression, survival, segmentation, detection, vqa, report_generation, multimodal_prediction]
+  prediction_level: {type: string}
+  target:
+    oneOf:
+      - {type: string, minLength: 1}
+      - {type: array, minItems: 1, maxItems: 1}
+  label_id: {type: [string, 'null']}
+  label_source: {type: [string, 'null']}
+  required_modalities: {type: array}
+  optional_modalities: {type: array}
+  status: {enum: [GO, CONDITIONAL_GO, REDIRECT, NO_GO]}
+  dependencies: {type: array}
+  support_tier: {enum: [SUPPORTED_TASK, FUTURE_OPPORTUNITY]}

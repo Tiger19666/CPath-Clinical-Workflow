@@ -1,0 +1,15 @@
+type: object
+required: [version, cohort_count, cohorts, default_pooling_policy]
+properties:
+  version: {const: CohortRegistry-v1}
+  cohort_count: {type: integer, minimum: 0}
+  cohorts:
+    type: array
+    items:
+      type: object
+      required: [cohort_id, name, modalities, labels, declared_role, status]
+      properties:
+        cohort_id: {type: string}
+        declared_role: {enum: [DEVELOPMENT, INTERNAL_VALIDATION, EXTERNAL_VALIDATION, VALIDATION_CANDIDATE, TRANSFER_ONLY, UNSUPPORTED, UNASSIGNED]}
+        status: {enum: [READY, CONDITIONAL]}
+  default_pooling_policy: {type: string}
