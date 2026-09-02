@@ -1,3 +1,8 @@
+---
+name: cpath-clinical-workflow
+description: End-to-end clinical computational pathology workflow for dataset discovery, clinical task design, reusable feature auditing, baseline planning/execution, validation, and reproducible clinical artifacts.
+---
+
 # CPath-Clinical Workflow Skill v1.0
 
 ## Purpose
